@@ -9,7 +9,7 @@ app.use("/api/hello", (req, res) => {
   const name = req.query.visitor_name;
   if (name)
     return res.status(200).json({ client_ip, greeting: `Hello ${name}` });
-  return res.status(200).json({ client_ip, message: "Hello" });
+  return res.status(200).json({ client_ip, greeting: "Hello" });
 });
 
 app.listen(5000, () => {
