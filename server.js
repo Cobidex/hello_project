@@ -23,6 +23,6 @@ app.use("/api/hello", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("server is listening on port", 5000);
+app.listen(8080, () => {
+  console.log("server is listening on port", 8080);
 });
