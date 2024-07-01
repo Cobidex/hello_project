@@ -10,7 +10,7 @@ app.set("trust proxy", true);
 
 app.use("/api/hello", async (req, res) => {
   const client_ip = req.ip;
-  const name = req.query.visitor_name;
+  const name = req.query.visitor_name.replace(/['"]/g, '');;
   const { TOKEN, API_KEY } = process.env;
   try {
 
