@@ -16,7 +16,7 @@ app.use("/api/hello", async (req, res) => {
 
     const response = await axios.get(`https://ipinfo.io/${client_ip}?token=${TOKEN}`);
     const location = response.data.city;
-    const weather = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${response.data.loc}`);
+    const weather = await axios.get(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${response.data.loc}`);
     const temp = weather.data.current.temp_c;
     res.status(200).json({ client_ip, location, greeting: `Hello, ${name}!, the temperature is ${temp} degrees Celcius in ${location}` });
   } catch (e) {
